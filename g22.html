@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ <title></title>
+  
+ <style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<script src= "Grade2.js"></script>
+</head>
+<body>
+ <table id = "t1"   />
+       
+</body>
+<script >
+/*
+var grade108 = [
+["張小美","S001",80,88,83,70,0,85,10,60],
+["邱婷婷","S002",90,98,89,85,90,88,96, 0],
+["楊大名","S003",50,92,89,95,75,73,5,70],
+["林志玲","S004",85,82,80,62,77,88,90, 0]
+];
+
+*/
+var tableStr = "<tr> <th >姓名</th><th>學號</th><th>作業 1</th><th>作業 2</th><th>作業 3</th><th>作業 4</th><th>作業 5</th><th>期中考</th><th>期末考</th><th>期末補考</th><th>總成績</th></tr>";
+
+  for(var i= 0; i<4; i++)
+    { var ret;
+     ret = grade108[i][2] *0.08;
+     ret =ret +grade108[i][3] * 0.08;
+     ret =ret +grade108[i][4] * 0.08;
+     ret =ret +grade108[i][5] * 0.08;
+     ret =ret +grade108[i][6] * 0.08;
+     ret =ret +grade108[i][7] * 0.3;
+    
+    if(grade108[i][8] < grade108[i][9])
+     ret =ret +grade108[i][9] * 0.3;
+    if(grade108[i][8] > grade108[i][9])
+     ret =ret +grade108[i][8] * 0.3;
+     var trStr = "<tr>";
+    for(j=0;j<10;j++ )
+	   {trStr = trStr + "<td>";
+	    trStr = trStr + grade108[i][j]; 
+	    trStr = trStr + "</td>"; 
+    }
+    trStr = trStr + "<td>";
+	  trStr = trStr + ret; 
+    trStr = trStr + "</td>"; 
+    if (ret >=60)
+        {
+         trStr = trStr + "<td>";
+	     trStr = trStr + "及格"; 
+         trStr = trStr + "</td>"; 
+        }
+     else 
+        {
+         trStr = trStr + "<td>";
+         trStr = trStr + "不及格"; 
+         trStr = trStr + "</td>"; 
+        }
+    trStr = trStr + "</tr>";
+	tableStr = tableStr + trStr;
+    
+   //alert(ret);
+
+    }
+    
+    
+	
+   document.getElementById("t1").innerHTML = tableStr;
+</script>
+</html>
